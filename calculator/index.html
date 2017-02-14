@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+      <head>
+               <link rel="stylesheet" href ="css/clc.css">
+               <script src="javascript/clc.js" charset="utf-8"></script>
+      </head>
+      <body>
+            <form class="form" action="index.html" method="post">
+            <div class="container1">
+              <h1 class="header">CALCULATOR</h1>
+              <div class="container2">
+              <input class="inputs" id="input1" type="text" name="" value=""  placeholder="Enter a Number" >
+              <input class="inputs" id="input2"  type="text" name="" value=""  placeholder="Enter a Number" ><br><br>
+              <select class="operation" id="sel"name="" >
+                      <option value="">Select a operation</option>
+                      <option value="Add">Addition</option>
+                      <option value="Sub">Subtraction</option>
+                      <option value="Mul">Multiplication</option>
+                      <option value="Div">Division</option>
+              </select><br><br>
+              <button class="click" type="button" onclick="performoperation()"name="button">Calculate</button>
+               <button class="click" type="reset" value="reset">Reset</button><br><br>
+              <input class="result" id='res'type="text" name="" placeholder="Result" ></input>
+            </div><br><br><br>
+            </div>
+            </form>
+      </body>
+</html>

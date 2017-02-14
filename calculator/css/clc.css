@@ -1,0 +1,60 @@
+body
+{
+    background-image: url("/home/bridgelabz6/Desktop/Assignment/calculator/images/5.jpg");
+    padding:3%;
+     margin:auto;
+}
+.form
+{
+   margin:auto;
+}
+.container1
+{
+    margin: auto;
+    width: 60%;
+    border: 3px solid #5e4526;
+    padding: 10px;
+    background-image: url("/home/bridgelabz6/Desktop/Assignment/calculator/images/4.jpg");
+}
+.container2
+{
+  margin: auto;
+  width: 60%;
+
+  padding: 5px;
+
+}
+.inputs
+{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 8px 8px 50px;
+    box-sizing: border-box;
+}
+.operation
+{
+      width: 75%;
+      padding: 12px 20px;
+      margin: 8px 8px 8px 50px;
+      box-sizing: border-box;
+      text-align: center;
+}
+.click
+{
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 8px 8px 50px;
+  box-sizing: border-box;
+}
+.result
+{
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px 8px 8px 50px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.header{
+  text-align: center;
+  color: white;
+}
