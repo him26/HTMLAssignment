@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p id='demo'></p>
+    <button onclick="addelement()">Push</button>
+    <button onclick="removeelement()">Pop</button>
+    <button onclick="shiftelement()">Shift</button>
+    <button onclick="unshiftelement()">Unshift</button>
+    <button onclick="makeTable()">Display</button>
+    <div class="" id="div1">
+
+    </div>
+
+  </body>
+  <script type="text/javascript">
+ function CreateMultiArray()
+ {
+      MultiArray  =new Array(5)
+         MultiArray [0] = new Array(2)
+             MultiArray [0][0] = "sugar"
+
+             MultiArray [0][1] = 1
+
+       MultiArray [1] = new Array(2)
+
+             MultiArray [1][0] = "Tea"
+
+             MultiArray [1][1] =  2
+
+       MultiArray [2] = new Array(2)
+
+             MultiArray [2][0] = "Coffee"
+
+             MultiArray [2][1] = 4
+
+       MultiArray [3] = new Array(2)
+
+             MultiArray [3][0] = "Rice"
+
+             MultiArray [3][1] = 6
+
+       MultiArray [4] = new Array(2)
+
+             MultiArray [4][0] = "wheet"
+
+             MultiArray [4][1] = 7
+    }
+CreateMultiArray();
+ function makeTable()
+ {
+   console.log("hi...........");
+    var table = document.createElement('table');
+    for (var i = 0; i < MultiArray.length; i++)
+    {
+        var row = document.createElement('tr');
+        for (var j = 0; j < MultiArray[i].length; j++)
+        {
+            var cell = document.createElement('td');
+            cell.textContent = MultiArray[i][j];
+            row.appendChild(cell);
+        }
+        table.appendChild(row);
+    }
+  //  console.log(table);
+    var element = document.getElementById("div1");
+    console.log(element.appendChild(table))    ;
+}
+
+// function display()
+// {
+//       var s='';
+//
+//       for (i=0;i<MultiArray.length; i++)
+//       {
+//           for (j=0;j<2; j++)
+//           {
+//               s=s+'Array['+i+', '+j+']:= '+'\"'+MultiArray[i][j]+'\" ';
+//           }//end of for i=0;i<n; i++
+//       }
+//     //  return s;
+//       console.log(s);
+//       document.getElementById('demo').innerHTML = s;
+// }
+//document.getElementById('demo').innerHTML = display();
+//document.arrayForm.ta1.value=s;
+
+var newfruite = ["Mango",8];
+//This function gets the array value when the form button is pressed
+function addelement(newfruite)
+{
+     MultiArray.push(this.newfruite);
+    console.log(MultiArray);
+}
+//poping elements in array
+ function removeelement()
+ {
+    MultiArray.pop();
+    console.log(MultiArray);
+ }
+ //shifting elements in an array
+ function shiftelement()
+ {
+     MultiArray.shift();
+     console.log(MultiArray);
+ }
+// //The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+ function unshiftelement(newfruite)
+ {
+   MultiArray.unshift(this.newfruite);
+   console.log(MultiArray);
+ }
+
+// End hiding. -->
+
+  </script>
+</html>

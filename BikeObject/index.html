@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+        <button onclick="createbikeobject()">create vehicle object</button>
+        <button onclick="setSpeed()">set speed of vehicle</button>
+          <button onclick="getSpeed()">get speed of vehicle object</button>
+  </body>
+  <script type="text/javascript">
+  var speed = parseInt(prompt("Enter a no......"));
+  var type = prompt("Enter the type of bike....");
+  var displacement = parseInt(prompt("Enter the displacment"));
+  var Bike1 ;
+
+
+
+   var Bike = function() {
+                           this.maxbikespeed = speed;
+                           this.biketype = type;
+                           this.bikediplacement = displacement;
+                         }
+   Bike.prototype.setBikeSpeed = function(speed)
+                              {
+                                    this.maxbikespeed = speed ;
+                                    console.log(speed);
+                                    return this ;
+                               }
+   Bike.prototype.setBikeType = function(type)
+                            {
+                                this.biketype = type ;
+                                console.log(type);
+                                return this ;
+                            }
+   Bike.prototype.setBikeDisplacement = function(displacement)
+                                    {
+                                        this.bikediplacement = displacement ;
+                                        console.log(displacement);
+                                        return this ;
+                                   }
+function createbikeobject()
+                          {    Bike1 =   new Bike();
+                              Bike1.setBikeSpeed(speed) ;
+                              Bike1.setBikeType(type) ;
+                              Bike1.setBikeDisplacement(displacement) ;
+                          }
+
+
+function setSpeed() {
+                         var sp= parseInt(prompt("Enter the speed.........."));
+                         if (Bike1!=undefined)
+                         {
+                           Bike1.setBikeSpeed(sp);
+                         }
+                         else
+                         {
+                           //document.getElementById("res").innerHTML="Create Vehicle First"
+                           window.alert("create vehicle first");
+                         }
+                    }
+function getSpeed() {
+                          if (Bike1!=undefined)
+                          {
+                                  window.alert(Bike1.maxbikespeed) ;
+                          }
+                          else
+                          {
+                              //  document.getElementById("res1").innerHTML="Create Vehicle First"
+                              window.alert("create vehicle first");
+                          }
+                      }
+//  Bike.prtotype.getBikeSpeed = function()
+//                       {
+//                          return this.maxbikespeed ;
+//                        }
+// Bike.prtotype.getBikeType = function()
+//                       {
+//                         return this.biketype ;
+//                       }
+// Bike.prtotype.getBikeDisplacment = function()
+//                       {
+//                         return this.bikediplacement ;
+//                       }
+
+
+  </script>
+</html>

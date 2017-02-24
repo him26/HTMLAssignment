@@ -1,8 +1,9 @@
 body
 {
-    background-image: url("/home/bridgelabz6/Desktop/Assignment/calculator/images/5.jpg");
+    background-image: url("/calculator/images/5.jpg");
     padding:3%;
      margin:auto;
+     background-color: black;
 }
 .form
 {
@@ -14,7 +15,8 @@ body
     width: 60%;
     border: 3px solid #5e4526;
     padding: 10px;
-    background-image: url("/home/bridgelabz6/Desktop/Assignment/calculator/images/4.jpg");
+    background-image: url("/calculator/images/4.jpg");
+
 }
 .container2
 {
@@ -54,7 +56,8 @@ body
   box-sizing: border-box;
   text-align: center;
 }
-.header{
+.header
+{
   text-align: center;
   color: white;
 }

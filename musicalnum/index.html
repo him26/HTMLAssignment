@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+  <script type="text/javascript">
+      var albums = {
+                      	"1245":
+                        {
+                      		"artist": "Robert Palmer",
+                      		"tracks": []
+                      	},
+                      	"2468":
+                        {
+                      		"album": "1999",
+                      		"artist": "Prince",
+                      		"tracks": [
+                      			"1999",
+                      			"Little Red Corvette"
+                      		]
+                      	},
+                      	"2548":
+                        {
+                      		"album": "Slippery When Wet",
+                      		"artist": "Bon Jovi",
+                      		"tracks": [
+                      			"Let It Rock",
+                      			"You Give Love a Bad Name"
+                      		]
+                      	},
+                      	"5439":
+                        {
+                      		"album": "ABBA Gold"
+                      	}
+                    }
+
+function update(id,property,value)
+{
+      if (value !="")
+      {
+            if(property != "tracks")
+            {
+                  //  console.log("pagal......");
+                    albums[id][property] = value;
+            }
+            else
+            {
+                    if(property == "tracks")// && albums[id].hasOwnProperty("tracks"))
+                    {
+                  //    console.log(albums[id].hasOwnProperty("tracks"));
+                      if(!albums[id].hasOwnProperty("tracks"))
+                      {
+                  //      console.log("create a array");
+                        albums[id].tracks = [];
+                        albums[id].tracks.push(value);
+                      }
+                      else
+                      {
+                    //    console.log("push element in array")
+                        albums[id].tracks.push(value);
+                      }
+                    }
+            }
+      }
+      else
+      {
+    //    console.log("delete property");
+        delete albums[id][property];
+      }
+  //    console.log(albums);
+      return albums;
+}
+
+var updatealbum = update(5439,"tracks","fgnnfdg");
+  console.log(updatealbum);
+
+
+  </script>
+</html>
