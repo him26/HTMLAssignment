@@ -1,0 +1,142 @@
+
+<html>
+
+<head>
+    <title>Readable format Date</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        function completion(newDate,month,newMonth,year,newYear)
+        {
+            var arrayMonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+            if(newDate===22||newDate===02||newDate===2)
+             newDate=newDate+"nd";
+             else
+             if(newDate===23||newDate===03||newDate===3)
+             newDate=newDate+"rd";
+             else
+             if(newDate===21||newDate===01||newDate===1)
+             newDate=newDate+"st";
+             else
+             newDate=newDate+"th";
+             if(month===newMonth && year===newYear){
+
+                 return newDate;
+             }
+
+             else
+             if(year===newYear)
+             {
+
+                 return newDate+" ,"+arrayMonth[newMonth-1];
+             }
+
+             else{
+
+                 return newDate+" ,"+arrayMonth[newMonth-1]+" "+newYear;
+             }
+
+        }
+        function inaugral(date,month,year,newMonth,newYear)
+        {
+            console.log("inaugral");
+            var arrayMonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+            if(date===22||date===02||date===2)
+             date=date+"nd";
+             else
+             if(date===23||date===03||date===3)
+             date=date+"rd";
+             else
+             if(date===21||date===01||date===1)
+             date=date+"st";
+             else
+             date=date+"th";
+             if(year===newYear&&month===newMonth){
+
+                  return date+" ,"+arrayMonth[month-1];
+             }
+             else{
+
+                 return date+" ,"+arrayMonth[month-1]+" "+year;
+             }
+
+        }
+        function eventDate()
+        {
+            var date = Number.parseInt(document.form1.date.value);
+            var month = Number.parseInt(document.form1.month.value);
+            var year = Number.parseInt (document.form1.year.value);
+            var newDate = Number.parseInt(document.form1.newDate.value);
+            var newMonth = Number.parseInt(document.form1.newMonth.value);
+            var newYear = Number.parseInt(document.form1.newYear.value);
+            var data=inaugral(date,month,year,newMonth,newYear)+","+completion(newDate,month,newMonth,year,newYear);
+            console.log(inaugral(date,month,year,newMonth,newYear)+","+completion(newDate,month,newMonth,year,newYear));
+            // debugger;
+            // document.form1.date.value
+            document.getElementById("displayHere").innerHTML= data;
+                        // debugger;
+            console.log(data);
+
+
+        }
+    </script>
+<form name="form1" method="POST">
+    <fieldset>
+        <table>
+        <legend>Event Detail</legend>
+
+        <tr>
+        <h3>Event Inaugral Date</h3>
+        </tr>
+       <tr>
+        <td>Date:</td><td><input type="Number" name="date" min="1" max="31" required/></td>
+        </tr>
+        <tr>
+        <td>Month:</td><td><input type="Number" name="month" min="1" max="12" required/></td>
+        </tr>
+        <tr>
+        <td>Year:</td><td><input type="Number" name="year" min="1900" max="2099" required/></td>
+        </tr>
+        <tr></tr><tr></tr><tr></tr>
+        </table>
+
+        <table>
+        <tr>
+        <h3>Event Completion Date</h3>
+        </tr>
+        <tr>
+        <td>Date:</td><td><input type="Number" name="newDate" min="1" max="31" required/></td>
+        </tr>
+        <tr>
+        <td>Month:</td><td><input type="Number" name="newMonth" min="1" max="12" required/></td>
+        </tr>
+        <tr>
+        <td>Year:</td><td><input type="Number" name="newYear" min="1900" max="2099" required/></td>
+        </tr>
+        <tr></tr><tr></tr><tr></tr>
+        </table>
+        <table>
+        <tr></tr><tr></tr>
+        <tr>
+        <input type="button" value="Submit Details" onclick="eventDate()"/>
+        </tr>
+          </table>
+          <table>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr>
+                  <td>Readable Display:</td>
+                  <td><textarea  rows="6" cols="50" id="displayHere" name="display" form="form1"></textarea></td>
+              </tr>
+          </table>
+        </fieldset>
+
+</form>
+
+</body>
+
+</html>
