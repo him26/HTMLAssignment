@@ -89,16 +89,16 @@ SinglyList.prototype.searchAt = function(position)
 
 
 var a = new SinglyList();
-a.add(1);
-a.add(2);
-a.add(3);
-a.add(4);
+// a.add(1);
+// a.add(2);
+// a.add(3);
+// a.add(4);
 
-console.log(a.add(1));
-console.log(a.add(2));
-console.log(a.add(3));
-console.log(a.add(4));
-console.log(a.searchAt(2));
+console.log(a.add('one'));
+console.log(a.add('two'));
+console.log(a.add('three'));
+console.log(a.add('four'));
+console.log('search at ',a.searchAt(3));
 console.log(a.remove(1));
 
 console.log(a);
