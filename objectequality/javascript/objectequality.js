@@ -6,7 +6,8 @@ function person(fname,lname,age,city)
     this.pcity = city;
 }
 var myFather = new person("John", "Doe", 50, "mumbai");
-var myMother = new person("Sally", "Rally", 48, "mumbai");
+//var myMother = new person("Sally", "Rally", 48, "mumbai");
+var myMother = myFather;
 function objectequality(obj1,obj2)
 {
     var result;
@@ -23,4 +24,3 @@ function objectequality(obj1,obj2)
 }
  var res =  objectequality(myFather,myMother);
  document.getElementById('ans').innerHTML=res;
-  

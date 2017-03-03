@@ -7,9 +7,11 @@
 
   </head>
   <body>
-    <section id="pdetail">
+    <!-- <section id="pdetail"> -->
+        <table id="pdetail" >
 
-    </section>
+        </table>
+    <!-- </section> -->
     <section id="article">
 
     </section>
@@ -21,7 +23,7 @@
   $(document).ready(function(){
   $.ajax({
       type: "GET",
-      url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=Sourav_Ganguly&callback=?",
+      url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=Sachin_Tendulkar&callback=?",
       contentType: "application/json; charset=utf-8",
       async: false,
       dataType: "json",
@@ -32,22 +34,22 @@
           var markup = data.parse.text["*"];
           console.log("I am markup",markup);
 
-          var blurb = $('<div></div>').html(markup);
-          console.log("I am blurb",blurb);
-          var b = $('<table></table>').html(markup);
-          console.log("I am b",b);
+          var div_tag_content = $('<div></div>').html(markup);
+          console.log("I am blurb",div_tag_content);
+          var table_tag_content = $('<table></table>').html(markup);
+          console.log("I am b",table_tag_content);
         //  var c = $('<ul></ul>').html(markup);
         //  console.log("I am c",c);
           // remove links as they will not work
-          blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
-          b.find('a').each(function(){$(this).replaceWith($(this).html());})
+          div_tag_content.find('a').each(function() { $(this).replaceWith($(this).html()); });
+          table_tag_content.find('a').each(function(){$(this).replaceWith($(this).html());})
           // remove any references
-          blurb.find('sup').remove();
+          div_tag_content.find('sup').remove();
 
           // remove cite error
-          blurb.find('.mw-ext-cite-error').remove();
-          $('#article').html($(blurb).find('p'));
-          $('#pdetail').html($(b).find('tr'));
+          div_tag_content.find('.mw-ext-cite-error').remove();
+          $('#article').html($(div_tag_content).find('p'));
+          $('#pdetail').html($(table_tag_content).find('tr'));
         //  $('#fgh').html($(c).find('li'));
 
       },
