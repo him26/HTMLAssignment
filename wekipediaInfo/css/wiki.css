@@ -1,0 +1,56 @@
+table
+{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 500px;
+    border: 1px solid #a2a9b1;
+    border-spacing: 3px;
+    background-color: #f8f9fa;
+    color: black;
+    /*overflow:scroll;*/
+    /*margin: 0.5em 0 0.5em 1em;*/
+    /*padding: 0.2em;*/
+    float: right;
+    clear: right;
+    font-size: 15px;
+    line-height: 1.5em;
+    display: table;
+}
+/*td.det
+{
+  text-align: left;
+}*/
+td, th
+{
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+tr:nth-child(even)
+{
+    background-color: #dddddd;
+}
+tr:nth-child(odd)
+{
+    background-color: white;
+
+}
+#header
+{
+  text-align: center;
+  font-family: arial, sans-serif;
+  background-color: pink;
+
+}
+#footer
+{
+  text-align: center;
+  font-family: arial, sans-serif;
+  background-color: pink;
+}
+p
+{
+  font-family: arial, sans-serif;
+  font-size: 15px;
+  text-align: justify;
+}
