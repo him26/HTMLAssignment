@@ -1,39 +1,45 @@
-var par = parseInt(prompt("enter value of par............."));
-var stroke = parseInt(prompt("enter value of stroke......"));
-
-function deomGolf(par,stroke)
+ function deomGolf()
 {
-
+  var par = parseInt(document.getElementById('par').value);
+  var stroke = parseInt(document.getElementById('stroke').value);
+  console.log(typeof(par));
+  console.log(typeof(stroke));
   if(stroke == 1)
   {
-    return "Hole-in-one!";
+
+    ans = "Hole-in-one!";
+    //return ans;
   }
   else if(stroke<=(par-1))
   {
-    return "Eagle";
+    ans = "Eagle";
+  //  return ans;
   }
   else if(stroke == (par-1))
   {
-    return "Birdie";
+    ans = "Birdie";
+    //return ans;
   }
   else if(stroke == par)
   {
-    return "Par";
+    ans = "Par";
+  //  return ans;
   }
   else if(stroke == par+1)
   {
-    return "Bogey";
+    ans = "Bogey";
+  //  return ans;
   }
   else if(stroke == par+2)
   {
-    return "Double Bogey";
+    ans = "Double Bogey";
+  //  return ans;
   }
   else if(stroke >=par+3)
   {
-    return "Go Home!";
+    ans = "Go Home!";
+  //  return ans;
   }
+  console.log(ans);
+  document.getElementById('output').innerHTML = ans ;
 }
-
-var ans = deomGolf(par,stroke);
-console.log(ans);
-document.getElementById('output').innerHTML = "output according to stroke............."+ans ;

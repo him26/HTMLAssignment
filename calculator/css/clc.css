@@ -16,15 +16,12 @@ body
     border: 3px solid #5e4526;
     padding: 10px;
     background-image: url("/calculator/images/4.jpg");
-
 }
 .container2
 {
   margin: auto;
   width: 60%;
-
   padding: 5px;
-
 }
 .inputs
 {

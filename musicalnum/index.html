@@ -5,7 +5,6 @@
     <title></title>
   </head>
   <body>
-
   </body>
   <script type="text/javascript">
       var albums = {
@@ -44,23 +43,20 @@ function update(id,property,value)
       {
             if(property != "tracks")
             {
-                  //  console.log("pagal......");
+
                     albums[id][property] = value;
             }
             else
             {
                     if(property == "tracks")// && albums[id].hasOwnProperty("tracks"))
                     {
-                  //    console.log(albums[id].hasOwnProperty("tracks"));
                       if(!albums[id].hasOwnProperty("tracks"))
                       {
-                  //      console.log("create a array");
                         albums[id].tracks = [];
                         albums[id].tracks.push(value);
                       }
                       else
                       {
-                    //    console.log("push element in array")
                         albums[id].tracks.push(value);
                       }
                     }
@@ -68,11 +64,9 @@ function update(id,property,value)
       }
       else
       {
-    //    console.log("delete property");
-        delete albums[id][property];
+            delete albums[id][property];
       }
-  //    console.log(albums);
-      return albums;
+        return albums;
 }
 
 var updatealbum = update(5439,"tracks","fgnnfdg");
