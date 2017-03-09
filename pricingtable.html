@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    * {
+  box-sizing: border-box;
+}
+
+/* Create three columns of equal width */
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+/* Style the list */
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* Add shadows on hover */
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+/* Pricing header */
+.price .header {
+  background-color:#23485a;;
+  color: white;
+  font-size: 25px;
+}
+
+/* List items */
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Grey list item */
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+/* The "Sign Up" button */
+.button {
+  background-color: rgb(35, 72, 90);
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+.TextBox {
+  background-color:#23485a;;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+}
+/* Change the width of the three columns to 100%
+(to stack horizontally on small screens) */
+/*@media only screen and (max-width: 600px) {
+  .columns {
+      width: 100%;
+  }
+}*/
+    </style>
+  </head>
+  <body>
+    <div class="columns">
+      <ul class="price" id="addlist">
+        <li class="header">Linked List</li>
+        <li class="grey"><input type="Text" class="TextBox" id="input1" value=""></li>
+        <li id="pos"></li>
+
+        <li class="grey">
+          <input type="button" onclick="addElement()" class="button" value="Add Element">
+          <input type="button" class="button" onclick="removeElement()"value="Remove Element">
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script type="text/javascript">
+  //method for creating node
+  function Node(data)
+  {
+    this.data = data;
+    this.next = null;
+  }
+
+  //method for creating Node
+  function SinglyList()
+  {
+    this.length = 0;
+    this.head = null;
+  }
+  //method for add element into singly singly linked list
+  SinglyList.prototype.add = function(value)
+  {
+    var newnode = new Node(value);
+    var  currentnode = this.head ;
+    if(!currentnode)
+    {
+      this.head = newnode ;
+      this.length = length++;
+      return newnode;
+    }
+    while(currentnode.next)
+    {
+      currentnode = currentnode.next ;
+    }
+    currentnode.next = newnode ;
+    this.length++;
+    return newnode ;
+  }
+  //method for remove element at position
+  SinglyList.prototype.remove = function(pos)
+  {
+    var currentnode = this.head ;
+    length = this.length ;
+    console.log("I am length",length);
+    count = 0;
+    beforeNodeToDelete = null;
+    nodeToDelete = null;
+    deletedNode = null;
+    if(pos<0 || pos>length)
+    {
+      throw new Error("sorry your node is not available.....")
+    }
+    if(pos === 0)
+    {
+          this.head = currentnode.next;
+          deletedNode = currentnode;
+          currentNode = null;
+          this.length--;
+          return "I am deleted"+deletedNode;
+    }
+    while (count < pos)
+     {
+        console.log("I am in while loop");
+          beforeNodeToDelete = currentnode;
+          console.log("beforeNodeToDelete",beforeNodeToDelete);
+          nodeToDelete = currentnode.next;
+          currentnode = nodeToDelete;
+          console.log("nodeToDelete",nodeToDelete);
+          count++;
+          console.log(count);
+      }
+      beforeNodeToDelete.next = nodeToDelete.next;
+      deletedNode = nodeToDelete;
+      nodeToDelete = null;
+      this.length--;
+      console.log("length",length);
+      console.log("I am deleted"+deletedNode);
+      return deletedNode;
+  }
+  //this method is searching elements at particular position
+  SinglyList.prototype.searchAt = function(position)
+  {
+        var currentNode = this.head,
+        length = this._length,
+        count = 1,
+        message = {failure: 'Failure: non-existent node in this list.'};
+
+        // 1st use-case: an invalid position
+        if (length === 0 || position < 1 || position > length)
+        {
+            throw new Error(message.failure);
+        }
+
+        // 2nd use-case: a valid position
+        while (count < position)
+        {
+            currentNode = currentNode.next;
+            count++;
+        }
+
+    return currentNode;
+  }
+var list = new SinglyList();
+  function addElement()
+  {
+
+    // console.log(list);
+    var inputvalue = document.getElementById('input1').value;
+    var data = list.add(inputvalue);
+    console.log(list);
+    console.log("hi...........");
+    var ul = document.getElementById('pos');
+    var li = document.createElement('li');
+    console.log(data);
+    li.innerHTML = data["data"];
+    ul.appendChild(li);
+  }
+  function removeElement()
+  {
+    var inputvalue = list.length;
+    console.log("gfn",inputvalue);
+    var data = list.remove(inputvalue);
+    console.log(list);
+    console.log("hi...........");
+    //var ul = document.getElementById('pos');
+     //var li = document.createElement('li');
+    // console.log(data);
+    // li.innerHTML = data["data"];
+    // ul.appendChild(li);
+  }
+  </script>
+</html>

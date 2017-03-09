@@ -1,15 +1,18 @@
-function person(fname,lname,age,city)
+var Car ;
+var Bike ;
+function vehicle(name,speed,price,displacement)
 {
-    this.firstname = fname;
-    this.lastname = lname;
-    this.page = age;
-    this.pcity = city;
+    this.firstname = name;
+    this.lastname = speed;
+    this.page = price;
+    this.pcity = displacement;
 }
-var myFather = new person("John", "Doe", 50, "mumbai");
-//var myMother = new person("Sally", "Rally", 48, "mumbai");
-var myMother = myFather;
+var Car = new vehicle("honda city",150,50000,300);
+var Bike = new vehicle("honda shine",250,500000,3000);
+var Bike2 = Bike;
 function objectequality(obj1,obj2)
 {
+
     var result;
     if(obj1 == obj2 || obj1 === obj2)
     {
@@ -22,5 +25,5 @@ function objectequality(obj1,obj2)
 
     return result;
 }
- var res =  objectequality(myFather,myMother);
- document.getElementById('ans').innerHTML=res;
+ var res =  objectequality(Bike,Car);
+document.getElementById('ans').innerHTML=res;

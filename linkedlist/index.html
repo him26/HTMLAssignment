@@ -3,9 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-        <script src="javascript/linkedlist.js" charset="utf-8"></script>
+        <script src="javascript/linkedlist2.js" charset="utf-8"></script>
+          <link rel="stylesheet" href ="css/linkedlist.css">
   </head>
   <body>
-
+    <div class="columns">
+      <ul class="price" id="addlist">
+        <li class="header">Linked List</li>
+        <li class="grey"><input type="Text" class="TextBox" id="input1" value=""></li>
+        <li id="pos"></li>
+        <li class="grey">
+          <input type="button" onclick="addElement()" class="button" value="Add Element">
+          <input type="button" class="button" onclick="removeElement()"value="Remove Element">
+        </li>
+      </ul>
+    </div>
   </body>
 </html>

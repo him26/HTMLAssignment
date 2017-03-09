@@ -3,75 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href ="css/music.css">
+    <script src="javascript/music.js" charset="utf-8"></script>
   </head>
   <body>
+<div class="background">
+
+
+    <div class="container-1">
+      <form class="" name="">
+        <div class="header">
+          <h1>MUSIC ALBUM PROPERTIES</h1>
+        </div>
+        <input type="text" name="" id="albumid" value="" placeholder="Enter Album Id">
+        <input type="text" name="" id="key" value="" placeholder="Enter Propert Of Album ">
+        <input type="text" name="" id="value"value="" placeholder="Enter Values Of Property">
+        <input type="button" name="" onclick="update()" value="click here">
+        <input type="reset" name=""  value="reset">
+      </form>
+      <div class="">
+        <h4>Output Area</h4>
+        <p id="output"></p>
+      </div>
+    </div>
+  </div>
+
   </body>
   <script type="text/javascript">
-      var albums = {
-                      	"1245":
-                        {
-                      		"artist": "Robert Palmer",
-                      		"tracks": []
-                      	},
-                      	"2468":
-                        {
-                      		"album": "1999",
-                      		"artist": "Prince",
-                      		"tracks": [
-                      			"1999",
-                      			"Little Red Corvette"
-                      		]
-                      	},
-                      	"2548":
-                        {
-                      		"album": "Slippery When Wet",
-                      		"artist": "Bon Jovi",
-                      		"tracks": [
-                      			"Let It Rock",
-                      			"You Give Love a Bad Name"
-                      		]
-                      	},
-                      	"5439":
-                        {
-                      		"album": "ABBA Gold"
-                      	}
-                    }
-
-function update(id,property,value)
-{
-      if (value !="")
-      {
-            if(property != "tracks")
-            {
-
-                    albums[id][property] = value;
-            }
-            else
-            {
-                    if(property == "tracks")// && albums[id].hasOwnProperty("tracks"))
-                    {
-                      if(!albums[id].hasOwnProperty("tracks"))
-                      {
-                        albums[id].tracks = [];
-                        albums[id].tracks.push(value);
-                      }
-                      else
-                      {
-                        albums[id].tracks.push(value);
-                      }
-                    }
-            }
-      }
-      else
-      {
-            delete albums[id][property];
-      }
-        return albums;
-}
-
-var updatealbum = update(5439,"tracks","fgnnfdg");
-  console.log(updatealbum);
-
-
   </script>
 </html>

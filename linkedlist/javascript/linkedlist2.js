@@ -66,7 +66,7 @@ SinglyList.prototype.remove = function(pos)
     beforeNodeToDelete.next = nodeToDelete.next;
     deletedNode = nodeToDelete;
     nodeToDelete = null;
-    this._length--;
+    this.length--;
     console.log("length",length);
     console.log("I am deleted"+deletedNode);
     return deletedNode;
@@ -94,32 +94,31 @@ SinglyList.prototype.searchAt = function(position)
 
   return currentNode;
 }
-
+var list = new SinglyList();
 function addElement()
 {
-  var list = new SinglyList();
+
+  // console.log(list);
   var inputvalue = document.getElementById('input1').value;
   var data = list.add(inputvalue);
+  console.log(list);
   console.log("hi...........");
-  var ul = document.getElementById('addlist');
+  var ul = document.getElementById('pos');
   var li = document.createElement('li');
-  li.appendChild(data);
+  console.log(data);
+  li.innerHTML = data["data"];
   ul.appendChild(li);
 }
-// var element = document.getElementById("div1");
-// console.log(element.appendChild(table))    ;
-// }
-var a = new SinglyList();
-// a.add(1);
-// a.add(2);
-// a.add(3);
-// a.add(4);
-
-console.log(a.add('one'));
-console.log(a.add('two'));
-console.log(a.add('three'));
-console.log(a.add('four'));
-console.log('search at ',a.searchAt(2));
-console.log(a.remove(3));
-
-console.log(a);
+function removeElement()
+{
+  var inputvalue = list.length;
+  console.log("gfn",inputvalue);
+  var data = list.remove(inputvalue);
+  console.log(list);
+  console.log("hi...........");
+  //var ul = document.getElementById('pos');
+   //var li = document.createElement('li');
+  // console.log(data);
+  // li.innerHTML = data["data"];
+  // ul.appendChild(li);
+}

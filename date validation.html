@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+  <script type="text/javascript">
+  function checkDate(day,month,year)
+  {
+        if(year < 1000 || year > 3000 || month == 0 || month > 12)
+        {
+                alert('Invalid Date! You used a date which does not exist in the known calender.');
+        }
+        var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+         if ( month == 1 || month > 2 )
+         {
+               if ( day > ListofDays[month - 1] )
+               {
+                 alert('Invalid Date! You used a date which does not exist in the known calender.');
+               }
+         }
+         if ( month == 2 )
+         {
+                var leapyear = false;
+                 if ( (!(year % 4) && year % 100) || !(year % 400) )
+                 {
+                   leapyear = true;
+                 }
+                 if ( (leapyear==false) && (day>=29) )
+                 {
+                   alert('Invalid Date! You used Feb 29th for an invalid leap year');
+                 }
+                 if ( (leapyear==true) && (day>29) )
+                 {
+                   alert('Invalid Date! You used a date greater than Feb 29th in a valid leap year');
+                 }
+          }
+  }
+checkDate(29,2,2017);
+
+  </script>
+</html>
