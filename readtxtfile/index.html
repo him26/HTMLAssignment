@@ -4,33 +4,32 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href ="css/read.css">
-
   </head>
   <body onload="">
-    <div class="columns">
+    <div class="column1">
       <ul class="price" id="addlist">
         <li class="header">Linked List</li>
-        <li class="grey"></li>
+        <li class="header"></li>
+          <li class="grey"></li>
         <li id="pos"></li>
         <li class="grey">
           <input type="button" class="button" onclick="loadDoc()" name="" value="LoadDataFromFile">
         </li>
       </ul>
     </div>
-    <div class="columns">
+    <div class="column2">
       <ul class="price" id="removelist">
-        <li class="header">Linked List</li>
-        <li class="grey"></li>
+        <li class="header">  <input type="text" id="searchdata"  name="search" placeholder="Search.."></li>
+        <li class="grey">
+          <!-- <input type="Text"class="TextBox" name="" value=""> -->
+        </li>
         <li id="adddata"></li>
         <li class="grey">
           <input type="button" class="button" onclick="but()" name="" value="Add Element">
           <input type="button" class="button" onclick="del()" name="" value="Del Element">
+          <input type="button" class="button" onclick="search()" name="" value="search Element">
         </li>
       </ul>
-    </div>
-
-    <div id="demo">
-
     </div>
       <script src="javascript/jquery-3.1.1.min.js"></script>
     <script src="javascript/read.js" charset="utf-8"></script>

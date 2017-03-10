@@ -1,10 +1,10 @@
 function digiclock()
 {
-      var time = new Date()
+      var time = new Date();
       var hours = time.getHours();
       var minutes = time.getMinutes();
       var seconds = time.getSeconds();
-      var temp ='';
+      // var temp ='';
       var temp = '' + ((hours > 12) ? hours - 12 : hours);
       if (hours == 0)
       temp = '12';

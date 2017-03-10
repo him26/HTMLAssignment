@@ -1,67 +1,122 @@
-* {
-box-sizing: border-box;
+*
+{
+    box-sizing: border-box;
 }
+body
+{
+    margin: 5%;
 
+    background-color: #240929;
+}
 /* Create three columns of equal width */
-.columns {
-float: left;
-width: 33.3%;
-padding: 8px;
+.column1
+{
+    float: left;
+
+    width: 40%;
+    padding: 8px;
+
+    border: 1px solid black;
+    background-color: #d7dfe3;
+}
+.column2
+{
+    float: right;
+    /*width: 55%;*/
+
+    padding: 8px;
+
+    border: 1px solid black;
+    background-color: #d7dfe3;
 }
 
 /* Style the list */
-.price {
-list-style-type: none;
-border: 1px solid #eee;
-margin: 0;
-padding: 0;
--webkit-transition: 0.3s;
-transition: 0.3s;
+.price
+{
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+
+    -webkit-transition: .3s;
+            transition: .3s;
+
+    border: 1px solid #eee;
+    /*width:150%;*/
 }
 
 /* Add shadows on hover */
-.price:hover {
-box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+.price:hover
+{
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,.2);
 }
 
 /* Pricing header */
-.price .header {
-background-color:#23485a;;
-color: white;
-font-size: 25px;
+.price.header
+{
+    font-size: 25px;
+
+    color: white;
+    background-color: #46344a;
 }
 
 /* List items */
-.price li {
-border-bottom: 1px solid #eee;
-padding: 10px;
-text-align: center;
+.price li
+{
+    font-size: 18px;
+
+    padding: 10px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #eee;
 }
 
 /* Grey list item */
-.price .grey {
-background-color: #eee;
-font-size: 20px;
+.price .grey
+{
+    font-size: 20px;
+
+    background-color: #46344a;
 }
 
 /* The "Sign Up" button */
-.button {
-background-color: rgb(35, 72, 90);
-border: none;
-color: white;
-padding: 10px 25px;
-text-align: center;
-text-decoration: none;
-font-size: 18px;
+.button
+{
+    font-size: 18px;
+
+    padding: 10px 25px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: white;
+    border: none;
+    background-color: #240929;
 }
-.TextBox {
-background-color:#23485a;;
-border: none;
-color: white;
-padding: 10px 25px;
-text-align: center;
-text-decoration: none;
-font-size: 14px;
+input[type=text]
+{
+    font-size: 16px;
+
+    box-sizing: border-box;
+    /*float: right;*/
+    width: 130px;
+    padding: 8px 16px 8px 16px;
+
+    -webkit-transition: width .4s ease-in-out;
+            transition: width .4s ease-in-out;
+
+    color: white;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #240929 ;
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+}
+
+input[type=text]:focus
+{
+    width: 100%;
 }
 /* Change the width of the three columns to 100%
 (to stack horizontally on small screens) */

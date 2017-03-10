@@ -29,7 +29,7 @@ SinglyList.prototype.add = function(value)
   currentnode.next = newnode ;
   this.length++;
   return newnode ;
-}
+};
 //method for remove element at position
 SinglyList.prototype.remove = function(pos)
 {
@@ -55,14 +55,14 @@ SinglyList.prototype.remove = function(pos)
   }
   while (count < pos)
    {
-      console.log("I am in while loop");
+        console.log("I am in while loop");
         beforeNodeToDelete = currentnode;
         console.log("beforeNodeToDelete",beforeNodeToDelete);
         nodeToDelete = currentnode.next;
         currentnode = nodeToDelete;
         console.log("nodeToDelete",nodeToDelete);
         count++;
-      console.log(count);
+        console.log(count);
     }
     beforeNodeToDelete.next = nodeToDelete.next;
     deletedNode = nodeToDelete;
@@ -72,34 +72,30 @@ SinglyList.prototype.remove = function(pos)
     console.log("length",length);
     console.log("I am deleted"+deletedNode);
     return deletedNode;
-}
+};
 //this method is searching elements at particular position
-SinglyList.prototype.searchAt = function(position)
+SinglyList.prototype.searchAt = function(value)
 {
       var currentNode = this.head,
-      length = this._length,
-      count = 1,
+      length = this.length,
+      //count = 0,
       message = {failure: 'Failure: non-existent node in this list.'};
-
       // 1st use-case: an invalid position
-      if (length === 0 || position < 1 || position > length)
+      if (length <0)
       {
           throw new Error(message.failure);
       }
-
       // 2nd use-case: a valid position
-      while (count < position)
+      for (var i = 0; i < length; i++)
       {
+          if(currentNode.data === value)
+          {
+            return currentNode;
+          }
           currentNode = currentNode.next;
-          count++;
       }
-
-  return currentNode;
-}
-
+};
 var list = new SinglyList();
-
-
  function loadDoc()
 {
   var xhttp = new XMLHttpRequest();
@@ -128,11 +124,11 @@ var list = new SinglyList();
 var addElement =function(dataarray)
 {
   this.temp = dataarray;
-}
+};
 addElement.prototype.add = function()
 {
           var addlist = temp.shift();
-          if(addlist!=undefined)
+          if(addlist!==undefined)
           {
             var data = list.add(addlist);
             var ul = document.getElementById('adddata');
@@ -145,13 +141,13 @@ addElement.prototype.add = function()
         {
             alert("your element is over");
         }
-  }
+  };
   function del()
   {
     var inputvalue = list.length;
     console.log("gfn",inputvalue);
     var data = list.remove(inputvalue);
-     if (data["data"]!=undefined||inputvalue<0)
+     if (data['data']!==undefined || inputvalue<0)
      {
       console.log(list);
     //  console.log("hi...........");
@@ -162,9 +158,11 @@ addElement.prototype.add = function()
       for (var i = 0; i < li.length; i++)
       {
           var temp =  li[i].innerHTML;
-          if(temp === data["data"])
+          if(temp == data["data"])
           {
           //  console.log(data);
+          console.log(i);
+        //ul.removeChild(ul.childNodes[i]);
             li[i].innerHTML = "";
           }//var li = document.createElement('li');
           //console.log(temp);
@@ -179,6 +177,21 @@ function but()
 {
 var a  =  new addElement();
 a.add();
+}
+function search()
+{
+  var value = document.getElementById('searchdata').value;
+  var searchdata = list.searchAt(value);
+  if (searchdata!==undefined||searchdata!==null)
+  {
+    alert("your element "+searchdata["data"]+" is available in list");
+    console.log("I am search data",searchdata);
+  }
+  else
+  {
+    alert("your element is not found");
+  }
+  console.log("I am search data",searchdata);
 }
 // console.log(addElement.add());
   // function add()
