@@ -1,56 +1,61 @@
 table
 {
     font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 500px;
-    border: 1px solid #a2a9b1;
-    border-spacing: 3px;
-    background-color: #f8f9fa;
-    color: black;
+    font-size: 15px;
+    line-height: 1.5em;
+
+    display: table;
     /*overflow:scroll;*/
     /*margin: 0.5em 0 0.5em 1em;*/
     /*padding: 0.2em;*/
     float: right;
     clear: right;
-    font-size: 15px;
-    line-height: 1.5em;
-    display: table;
+
+    width: 500px;
+
+    border-spacing: 3px;
+    border-collapse: collapse;
+
+    color: black;
+    border: 1px solid #a2a9b1;
+    background-color: #f8f9fa;
 }
-/*td.det
+td,th
 {
-  text-align: left;
-}*/
-td, th
-{
-    border: 1px solid #dddddd;
-    text-align: center;
     padding: 8px;
+
+    text-align: center;
+
+    border: 1px solid #ddd;
 }
 tr:nth-child(even)
 {
-    background-color: #dddddd;
+    background-color: #ddd;
 }
 tr:nth-child(odd)
 {
     background-color: white;
-
 }
 #header
 {
-  text-align: center;
-  font-family: arial, sans-serif;
-  background-color: pink;
+    font-family: arial, sans-serif;
 
+    text-align: center;
+
+    background-color: pink;
 }
 #footer
 {
-  text-align: center;
-  font-family: arial, sans-serif;
-  background-color: pink;
+    font-family: arial, sans-serif;
+
+    text-align: center;
+
+    background-color: pink;
 }
 p
 {
-  font-family: arial, sans-serif;
-  font-size: 15px;
-  text-align: justify;
+    font-family: arial, sans-serif;
+    font-size: 15px;
+
+    text-align: justify;
 }

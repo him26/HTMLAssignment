@@ -1,60 +1,65 @@
 body
 {
-    background-image: url("/calculator/images/5.jpg");
-    padding:3%;
-     margin:auto;
-     background-color: black;
+    margin: auto;
+    padding: 3%;
+
+    background-color: black;
+    background-image: url('/calculator/images/5.jpg');
 }
 .form
 {
-   margin:auto;
+    margin: auto;
 }
 .container1
 {
-    margin: auto;
     width: 60%;
-    border: 3px solid #5e4526;
+    margin: auto;
     padding: 10px;
-    background-image: url("/calculator/images/4.jpg");
+
+    border: 3px solid #5e4526;
+    background-image: url('/calculator/images/4.jpg');
 }
 .container2
 {
-  margin: auto;
-  width: 60%;
-  padding: 5px;
+    width: 60%;
+    margin: auto;
+    padding: 5px;
 }
 .inputs
 {
-    width: 30%;
-    padding: 12px 20px;
-    margin: 8px 8px 8px 50px;
     box-sizing: border-box;
+    width: 30%;
+    margin: 8px 8px 8px 50px;
+    padding: 12px 20px;
 }
 .operation
 {
-      width: 75%;
-      padding: 12px 20px;
-      margin: 8px 8px 8px 50px;
-      box-sizing: border-box;
-      text-align: center;
+    box-sizing: border-box;
+    width: 75%;
+    margin: 8px 8px 8px 50px;
+    padding: 12px 20px;
+
+    text-align: center;
 }
 .click
 {
-  width: 30%;
-  padding: 12px 20px;
-  margin: 8px 8px 8px 50px;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    width: 30%;
+    margin: 8px 8px 8px 50px;
+    padding: 12px 20px;
 }
 .result
 {
-  width: 75%;
-  padding: 12px 20px;
-  margin: 8px 8px 8px 50px;
-  box-sizing: border-box;
-  text-align: center;
+    box-sizing: border-box;
+    width: 75%;
+    margin: 8px 8px 8px 50px;
+    padding: 12px 20px;
+
+    text-align: center;
 }
 .header
 {
-  text-align: center;
-  color: white;
+    text-align: center;
+
+    color: white;
 }

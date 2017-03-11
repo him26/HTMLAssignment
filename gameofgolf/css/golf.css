@@ -1,8 +1,8 @@
 body
 {
-  background-color: darkgray;
-  background-image: url("/gameofgolf/images/11.jpg");
   background-repeat:
+  /*background-color: darkgray;*/
+  background-image: url("/gameofgolf/images/11.jpg");
 }
 .container-2
 {

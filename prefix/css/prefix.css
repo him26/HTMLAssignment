@@ -1,29 +1,33 @@
 .container-1
 {
-  text-align: center;
-  color: black;
-  border: 5px solid black;
-  background-color: #2a4f61;
-  margin-bottom: 25px;
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: black;
+    border: 5px solid black;
+    background-color: #2a4f61;
 }
 input[Type=Text]
 {
     width: 90%;
-    padding-bottom: 10px;
-    padding-top: 10px;
     margin-top: 20px;
     margin-bottom: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
     border-color: cornflowerblue;
 }
 button
 {
-  width: 90%;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-color: cornflowerblue;
-  background-color: black;
+    width: 90%;
     margin-bottom: 25px;
-  color: white;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+    color: white;
+    border-color: cornflowerblue;
+    background-color: black;
 }

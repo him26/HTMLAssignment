@@ -5,27 +5,33 @@ body
 h1
 {
     text-align: center;
-    background-color: #dddddd;
+
+    background-color: #ddd;
 }
 table
 {
     font-family: arial, sans-serif;
-    border-collapse: collapse;
+
     width: 100%;
+
+    border-collapse: collapse;
 }
 td.det
 {
-  text-align: left;
+    text-align: left;
 }
-td, th
+td,
+th
 {
-    border: 1px solid #dddddd;
-    text-align: center;
     padding: 8px;
+
+    text-align: center;
+
+    border: 1px solid #ddd;
 }
 tr:nth-child(even)
 {
-    background-color: #dddddd;
+    background-color: #ddd;
 }
 tr:nth-child(odd)
 {
