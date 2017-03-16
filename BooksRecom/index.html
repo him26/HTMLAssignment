@@ -1,43 +1,212 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>
-    </title>
-  </head>
-  <body>
-  </body>
-  <script type="text/javascript">
-  var booksdata = {
-    "Five on a Treasure Island": {
-        "topic": ["A","B","C","D"]
-    },
-    "Five Go Adventuring Again": {
-      "topic": ["E","F","G","H"]
-    },
-    "Five Go to Smuggler's Top": {
-    "topic": ["I","J","K","L"]
-    },
-    "Five Have Plenty of Fun": {
-      "topic": ["M","N","O","P"]
-    }
-  }
 
-  class Books
-  {
-    constructor(name,topic)
+<head>
+  <meta charset="utf-8">
+  <title>
+  </title>
+  <style media="screen">
+    * {
+      box-sizing: border-box;
+    }
+    /* Create three columns of equal width */
+
+    .columns {
+      float: left;
+      width: 33.3%;
+      padding: 8px;
+    }
+    /* Style the list */
+
+    .price {
+      list-style-type: none;
+      border: 1px solid #eee;
+      margin: 0;
+      padding: 0;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+    }
+    /* Add shadows on hover */
+
+    .price:hover {
+      box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2)
+    }
+    /* Pricing header */
+
+    .price .header {
+      background-color: #23485a;
+      ;
+      color: white;
+      font-size: 25px;
+      text-align: center;
+    }
+    /* List items */
+
+    .price li {
+      border-bottom: 1px solid #eee;
+      padding: 10px;
+      text-align: left;
+    }
+    /* Grey list item */
+
+    .price .grey {
+      background-color: #eee;
+      font-size: 20px;
+      text-align: center;
+    }
+    /* The "Sign Up" button */
+
+    .button {
+      background-color: rgb(35, 72, 90);
+      border: none;
+      color: white;
+      padding: 10px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .TextBox {
+      background-color: #23485a;
+      ;
+      border: none;
+      color: white;
+      padding: 10px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    /* Change the width of the three columns to 100%
+    (to stack horizontally on small screens) */
+    /*@media only screen and (max-width: 600px) {
+    .columns {
+      width: 100%;
+    }
+    }*/
+  </style>
+</head>
+
+<body>
+  <div id="overLay"></div>
+  <div class="popupBox" id="xPopup">
+    <!-- <h2 id="output"></h2> -->
+    <ul class="" id="output">
+    </ul>
+  </div>
+  <div class="columns">
+    <ul class="price" id="addlist">
+      <li class="header">Books Collection</li>
+      <li class="grey"></li>
+      <li id="pos"></li>
+      <li class="grey">
+        <input type="button" class="button" name="" onclick="disp()" value="Load collection of books">
+      </li>
+    </ul>
+  </div>
+</body>
+<script type="text/javascript">
+  var booksdata = [{
+      "Name": "Five on a Treasure Island",
+      "topic": ["A", "B", "C", "D"]
+    },
     {
+      "Name": "Five Go Adventuring Again",
+      "topic": ["E", "F", "G", "L"]
+    },
+    {
+      "Name": "Five Go to Smuggler's Top",
+      "topic": ["I", "E", "B", "L"]
+    },
+    {
+      "Name": "Five Have Plenty of Fun",
+      "topic": ["M", "A", "O", "C"]
+    }
+  ]
+
+  class Books {
+    constructor(name, topic){
       this.name = name;
       this.topic = topic;
     }
-    getName()
-    {
-      console.log('Book name is ', this.name + '........');
+    getName() {
+      //console.log(this.name);
+      return this.name;
     }
-    getToics()
-    {
-
+    getToics() {
+      //console.log(this.topic);
+      return this.topic;
     }
   }
-  </script>
+  class FindBooks extends Books {
+    findrecbooks() {
+      var bookname = this.name;
+      var topicname = this.topic;
+      // console.log(topicname);
+      // console.log(bookname);
+      for (var i = 0; i < booksdata.length; i++) {
+        var Booksname = booksdata[i].Name;
+        var topics = booksdata[i].topic;
+        // console.log(Booksname);
+        // console.log(topics);
+        for (var j = 0; j < topics.length; j++) {
+          if (topicname === topics[j]) {
+            console.log(Booksname);
+            alert(Booksname);
+          }
+        }
+        // ul.appendChild(li);
+        // console.log(a);
+        // console.log(b);
+      }
+    }
+  }
+
+  function disp() {
+    for (var i = 0; i < booksdata.length; i++) {
+      var Booksname = booksdata[i].Name;
+      var topics = booksdata[i].topic;
+      //  console.log("fghhhhhhhhh",Booksname);
+      //  console.log("dfhhhhhh",topics);
+      var p = new Books(Booksname, topics);
+      //  console.log(p);
+      var a = p.getName();
+      var b = p.getToics();
+      var ul = document.getElementById('pos');
+      var li = document.createElement('li');
+      li.innerHTML = a;
+      ul.appendChild(li);
+      var ul1 = document.createElement('ul');
+      for (var j = 0; j < b.length; j++) {
+        console.log(b[j]);
+        li.appendChild(ul1);
+        var li1 = document.createElement('li');
+        // li1.innerHTML = b[j];
+        var del = document.createElement('a');
+        del.innerHTML = b[j];
+        // del.setAttribute('type', 'button');
+        // del.setAttribute('name', 'rec');
+        // del.setAttribute('value', 'clickhere!');
+        del.setAttribute('href', 'javascript:searchRecBook("' + a + '","' + b[j] + '")');
+
+        li1.appendChild(del);
+        ul1.appendChild(li1);
+        //var button = document.createElement('')
+      }
+      // ul.appendChild(li);
+      console.log(a);
+      console.log(b);
+    }
+  }
+
+  function searchRecBook(name, topic) {
+    this.name = name;
+    this.topic = topic;
+    console.log("hi I am function" + topic);
+    console.log("hi I am function" + name);
+    var p = new FindBooks(this.name, this.topic);
+    p.findrecbooks();
+    console.log(p);
+  }
+</script>
+
 </html>
